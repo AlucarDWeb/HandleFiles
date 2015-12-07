@@ -6,20 +6,11 @@ import os
 
 class HandleFiles:
 
-    def scan_for_files_with_extension(self, path, ext):
-
+    def scan_for_files_with_extension(self, path):
+        ext = [".avi", ".mkv",]
         for root, dirs, files in os.walk(path):
             for name in files:
-                if name.endswith ('.{0}'.format(ext)):
-                    with open("temp.txt", "a") as list_text_file:
-                        list_text_file.write(" - {0}".format(name))
-
-
-
-    def scan_for_files(self, path):
-
-        for root, dirs, files in os.walk(path):
-            for name in files:
+                if name.endswith (tuple(ext)):
                     with open("temp.txt", "a") as list_text_file:
                         list_text_file.write(" - {0}".format(name))
 
