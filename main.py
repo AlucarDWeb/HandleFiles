@@ -4,8 +4,6 @@ from DbHelper import DbHelper
 
 path = raw_input('HandleFiles in Path : ')
 
-
-
 a = HandleFiles()
 b = DbHelper()
 

@@ -1,8 +1,13 @@
 import sqlite3
+import os
 
 class DbHelper:
 
     def create_table_on_db(self):
+
+        if not os.path.isfile('database.db'):
+            open('database.db', 'w')
+
         conn = sqlite3.connect('database.db')
         conn.execute('''CREATE TABLE IF NOT EXISTS ftable
                     (ID INTEGER PRIMARY KEY AUTOINCREMENT   NOT NULL,
